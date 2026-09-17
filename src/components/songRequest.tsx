@@ -43,7 +43,28 @@ function SongRequest() {
         loadRequests();
     }, []);
 
-    if (loading) return <div className="loader">טוען בקשות...</div>;
+    if (loading) {
+        return (
+            <div className="page-wrapper" dir="rtl">
+                <div className="add-request-section">
+                    <div className="add-request-card skeleton" style={{ height: 56 }} />
+                </div>
+                <div className="requests-masonry-container">
+                    {spanOptions.map((span, index) => (
+                        <div
+                            key={index}
+                            className="request-skeleton-card"
+                            style={{ gridColumn: `span ${isMobile ? 1 : span}` }}
+                        >
+                            <div className="skeleton-line short skeleton" />
+                            <div className="skeleton-line title skeleton" />
+                            <div className="skeleton-line medium skeleton" />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    }
     const handleVote = async (id: number) => {
         try {
             const response: ApiResponse = await ToggleVote(id);

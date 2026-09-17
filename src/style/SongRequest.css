@@ -1,6 +1,8 @@
 :root {
     --card-white: #ffffff;
-    --main-blue: #2196F3;
+    --accent: #cc30d1;
+    --accent-dark: #6d1b70;
+    --accent-light: #f8e7f4;
     --text-dark: #2c3e50;
     --text-gray: #95a5a6;
     --bg-light: #f8f9fa;
@@ -25,7 +27,6 @@
     gap: 15px;
     width: 100%;
     max-width: 100%;
-    /* במקום max-width: 500px */
 }
 
 .add-request-input {
@@ -35,25 +36,33 @@
     border-radius: 12px;
     font-size: 1rem;
     outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .add-request-input:focus {
-    border-color: var(--main-blue);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .submit-request-btn {
-    background: var(--main-blue);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 22px;
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .submit-request-btn:hover {
-    background: #1976D2;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(204, 48, 209, 0.3);
+}
+
+.submit-request-btn:active {
+    transform: translateY(0);
 }
 
 .requests-masonry-container {
@@ -69,6 +78,7 @@
     color: var(--text-gray);
     padding: 40px;
     grid-column: span 4;
+    animation: fadeInUp 0.5s ease both;
 }
 
 .request-card {
@@ -78,12 +88,23 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid #edf2f7;
     position: relative;
-    transition: transform 0.2s;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     box-sizing: border-box;
+    animation: fadeInUp 0.45s ease both;
 }
 
+.request-card:nth-of-type(1) { animation-delay: 0s; }
+.request-card:nth-of-type(2) { animation-delay: 0.05s; }
+.request-card:nth-of-type(3) { animation-delay: 0.1s; }
+.request-card:nth-of-type(4) { animation-delay: 0.15s; }
+.request-card:nth-of-type(5) { animation-delay: 0.2s; }
+.request-card:nth-of-type(6) { animation-delay: 0.25s; }
+.request-card:nth-of-type(7) { animation-delay: 0.3s; }
+.request-card:nth-of-type(8) { animation-delay: 0.35s; }
+
 .request-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(204, 48, 209, 0.15);
 }
 
 .request-card::before {
@@ -93,7 +114,7 @@
     bottom: 20%;
     right: 0;
     width: 4px;
-    background: var(--main-blue);
+    background: linear-gradient(180deg, var(--accent), var(--accent-dark));
     border-radius: 0 4px 4px 0;
 }
 
@@ -110,9 +131,9 @@
 }
 
 .votes-count {
-    color: var(--main-blue);
+    color: var(--accent-dark);
     font-weight: bold;
-    background: #e3f2fd;
+    background: var(--accent-light);
     padding: 2px 12px;
     border-radius: 12px;
 }
@@ -138,27 +159,30 @@
 }
 
 .vote-button {
-    background: var(--main-blue);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     color: white;
     border: none;
     padding: 8px 18px;
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .vote-button:hover {
-    background: #1976D2;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(204, 48, 209, 0.3);
 }
 
 .vote-button.active {
-    background: #e0e0e0;
-    color: var(--text-dark);
+    background: #f1e3ee;
+    color: var(--accent-dark);
+    box-shadow: none;
 }
 
 .vote-button.active:hover {
-    background: #bdbdbd;
+    background: #e6d0e2;
+    transform: none;
 }
 
 .status-done {
@@ -170,8 +194,38 @@
 .loader {
     text-align: center;
     padding: 50px;
-    color: var(--main-blue);
+    color: var(--accent-dark);
     font-size: 1.2rem;
+}
+
+/* --- מצב טעינה (סקלטון) --- */
+.request-skeleton-card {
+    background: var(--card-white);
+    border-radius: 18px;
+    padding: 20px;
+    border: 1px solid #edf2f7;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.request-skeleton-card .skeleton-line {
+    height: 14px;
+}
+
+.request-skeleton-card .skeleton-line.short {
+    width: 40%;
+}
+
+.request-skeleton-card .skeleton-line.title {
+    height: 20px;
+    width: 90%;
+    margin: 6px 0;
+}
+
+.request-skeleton-card .skeleton-line.medium {
+    width: 60%;
 }
 
 @media (max-width: 900px) {

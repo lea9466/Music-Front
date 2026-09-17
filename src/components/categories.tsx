@@ -47,7 +47,15 @@ console.log('קטגוריות נטענו');
     return (
         <div className="category-drawer expanded">
             {loading ? (
-                <div className="drawer-loader">טוען שירים...</div>
+                [1, 2, 3].map((i) => (
+                    <div className="drawer-skeleton-row" key={i}>
+                        <div className="skeleton-info">
+                            <div className="skeleton-line name skeleton" />
+                            <div className="skeleton-line artist skeleton" />
+                        </div>
+                        <div className="skeleton-line btn skeleton" />
+                    </div>
+                ))
             ) : songs.length > 0 ? (
                 songs.map((song) => (
                     <div className="drawer-song-row" key={song.id}>
