@@ -1,17 +1,9 @@
 מערכת ניהול אקורדים לשירים - Full Stack Project
 אפליקציית Web לניהול והצגת אקורדים לשירים בזמן אמת, עם דגש על חווית משתמש (UX) גבוהה ועיצוב מדויק (Pixel-perfect).
 
-🚀 לינקים (Links)
-- **אתר פעיל (Live Demo):** [music-project-snowy-five.vercel.app](https://music-project-snowy-five.vercel.app)
-משתמש דמו לניהול (Admin Access):
-
-> [!IMPORTANT]
-> **Admin Access for Reviewers:**
-> - **Email:** `admin@demo.com`
-> - **Password:** `Admin123!`
-
 ✨ פיצ'רים עיקריים (Features)
 אזור ניהול (Admin Panel): מערכת הרשאות מלאה הכוללת טבלאות גנריות לביצוע פעולות CRUD (הוספה, עריכה, מחיקה) על שירים וקטגוריות.
+לאחר כתיבת אקורדים אופציה להפעלת סריקה עם AI כשהוא מציע אקורדים משופרים ומסביר למה מומלץ לשלב אותם
 
 מקלדת ויזואלית אינטראקטיבית: הצגת אקורדים בצורה ויזואלית על גבי קלידים בזמן אמת.
 
@@ -21,6 +13,7 @@ Auto-Scroll: פונקציונליות ייעודית לנגנים המאפשרת
 עיצוב רספונסיבי: התאמה מלאה לכל סוגי המסכים (Mobile & Desktop).
 
 🛠 טכנולוגיות (Tech Stack)
+
 Frontend: React, TypeScript, Vite, SASS/SCSS.
 
 Backend: ASP.NET Core, Entity Framework Core, REST API.
@@ -35,7 +28,7 @@ Tools: Git, GitHub, Postman, Figma.
 <img width="1841" height="905" alt="image" src="https://github.com/user-attachments/assets/f569f65b-cc18-4e0d-95d8-28d1933796ee" />
 <img width="1660" height="903" alt="image" src="https://github.com/user-attachments/assets/a6de2ceb-b8ad-45dc-8512-8f3dab5e10c5" />
 <img width="1739" height="892" alt="image" src="https://github.com/user-attachments/assets/740e95e8-69e0-4ae1-8973-633e4bcfb645" />
-
+<img width="1869" height="885" alt="צילום מסך 2026-04-29 012346" src="https://github.com/user-attachments/assets/056171e0-c535-43be-96ea-f88b8d34875c" />
 
 
 
