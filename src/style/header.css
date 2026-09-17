@@ -86,21 +86,42 @@
 @media(max-width:1000px) {
     .header {
         flex-direction: column;
-        padding-top: 20px;
         height: auto;
-        /* שיתאים לתוכן בנייד */
-        min-height: 150px;
+        min-height: auto;
+        padding: 16px 60px 14px 16px;
+        gap: 12px;
+        background: linear-gradient(135deg, #6a11cb 0%, #cc30d1 100%);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
 
     .mainLinks {
         justify-content: center;
         width: 100%;
         gap: 15px;
+        order: 2;
     }
 
     .left {
-        width: 50%;
-        margin-right: 30%;
-        margin-top: 10px;
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 1;
+    }
+}
+
+@media(max-width:500px) {
+    .header {
+        padding: 14px 55px 12px 12px;
+        gap: 10px;
+    }
+
+    .headeBtns {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .mainLinks a {
+        font-size: 17px;
     }
 }
