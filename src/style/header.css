@@ -90,8 +90,6 @@
         min-height: auto;
         padding: 16px 60px 14px 16px;
         gap: 12px;
-        background: linear-gradient(135deg, #6a11cb 0%, #cc30d1 100%);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
 
     .mainLinks {
